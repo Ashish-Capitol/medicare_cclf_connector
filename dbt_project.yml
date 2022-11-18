@@ -9,7 +9,7 @@ vars:
   source_name: cclf                     # configuration required
                                         # name describing the dataset feeding this project
 
-  input_database: medicare_claims       # configuration required
+  input_database: syntegra_synthetic_sample       # configuration required
                                         # name of the database where sources feeding this project are stored
 
   input_schema:  cclf                   # configuration required
@@ -18,7 +18,7 @@ vars:
   output_database: tuva                 # configuration required
                                         # name of the database where output of this project should be written
 
-  output_schema: claims_input           # configuration required
+  output_schema: dbt_thu_claims_input           # configuration required
                                         # name of the schema where output of this project should be written
 
   beneficiary_demographics: "{{ source(var('source_name'),'beneficiary_demographics') }}"
