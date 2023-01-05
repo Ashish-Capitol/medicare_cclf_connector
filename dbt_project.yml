@@ -3,19 +3,19 @@ version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'default'                       # configuration required
+profile: 'dbt_capitol_data_schema'                       # configuration required
 
 vars:
-  input_database: medicare_claims       # configuration required
+  input_database: dev_db       # configuration required
                                         # name of the database where sources feeding this project are stored
 
-  input_schema:  cclf                   # configuration required
+  input_schema:  syntegra_wh                   # configuration required
                                         # name of the schema where sources feeding this project is stored
 
-  output_database: tuva                 # configuration required
+  output_database: dev_db                # configuration required
                                         # name of the database where output of this project should be written
 
-  output_schema: claims_input           # configuration required
+  output_schema: syntegra_tuva           # configuration required
                                         # name of the schema where output of this project should be written
 
   beneficiary_demographics: "{{ source('cclf','beneficiary_demographics') }}"
